@@ -72,12 +72,7 @@ class BaseContent(models.Model):
     title = models.CharField(max_length=100)
     created = models.DateTimeField(auto_now_add=True)
 
-    class Meta:
-        abstract = True  # This makes BaseContent an abstract model
-
 
 class Text(BaseContent):
     body = models.TextField()
 
-    def __str__(self):
-        return self.title
